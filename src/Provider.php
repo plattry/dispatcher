@@ -45,7 +45,8 @@ class Provider implements ListenerProviderInterface
     {
         return array_reduce(
             $this->listeners[$event::class] ?? [],
-            fn($front, $next) => [...$front ?: [], ...$next]
+            fn($front, $next) => [...$front ?: [], ...$next],
+            []
         );
     }
 }
